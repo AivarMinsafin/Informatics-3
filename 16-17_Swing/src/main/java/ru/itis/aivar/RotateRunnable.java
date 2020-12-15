@@ -14,7 +14,7 @@ public class RotateRunnable implements Runnable{
         while (true){
             rotate.repaint();
             try {
-                Thread.sleep(100);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 throw new IllegalStateException(e);
             }

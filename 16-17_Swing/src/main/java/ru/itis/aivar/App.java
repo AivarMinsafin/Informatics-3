@@ -68,6 +68,7 @@ public class App {
         JButton form2Button = new JButton("Submit");
         form.add(form2Button);
         JPanel rotate = new RotatingSquare();
+        Thread rotating = new Thread(new RotateRunnable(rotate));
 
         drawButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -94,10 +95,8 @@ public class App {
                 mainFrame.remove(square);
                 mainFrame.remove(form);
                 mainFrame.add(rotate, BorderLayout.CENTER);
-                int x = 0;
-                while (x < 1000){
-                    rotate.repaint();
-                    x++;
+                if (!rotating.isAlive()){
+                    rotating.start();
                 }
             }
 

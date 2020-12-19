@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.web.WebView?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #82ae67;" BorderPane.alignment="CENTER">
+            <items>
+                <Button mnemonicParsing="false" onAction="#previousHistory" style="-fx-background-color: #aeaeae;" text="PREVIOUS" textFill="WHITE" />
+                <Button mnemonicParsing="false" onAction="#nextHistory" style="-fx-background-color: #aeaeae;" text="NEXT" textFill="WHITE" />
+                <Button mnemonicParsing="false" onAction="#go" style="-fx-background-color: #ae1111;" text="GO" textFill="WHITE" />
+                <TextField fx:id="addressBar" prefHeight="25.0" prefWidth="627.0" />
+                <Button mnemonicParsing="false" onAction="#showHistory" style="-fx-background-color: #329494" text="HISTORY" textFill="white"/>
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <WebView fx:id="web" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <HBox fx:id="statusBox">
+            <ProgressBar fx:id="progressBar" prefWidth="200" prefHeight="10"/>
+            <Text fx:id="status" textAlignment="CENTER"/>
+        </HBox>
+    </bottom>
+</BorderPane>
